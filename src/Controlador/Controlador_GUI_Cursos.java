@@ -29,12 +29,23 @@ public class Controlador_GUI_Cursos implements ActionListener {
          }
          
         if(evento.getActionCommand().equals("Consultar")){
-            metodosCursos.consultarCurso(ventanaCursos.getJt_Sigla());
+            buscar();
         } 
          
          
- }
     
- 
+    public void buscar() {
+      if(!ventanaCursos.getJt_Sigla().equals(""))
+           {
+               if(metodosCursos.consultarCurso(ventanaCursos.getJt_Sigla()))
+               {
+                   ventanaCursos.setJt_NombreCurso(metodosCursos.getNombreCurso());
+               }
+           }
+           else
+           {
+           JOptionPane.showMessageDialog(null, "Por favor digite una sigla antes de buscar.");
+           }
+   }
  
 }//FIN
