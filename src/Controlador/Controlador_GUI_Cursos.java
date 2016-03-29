@@ -29,7 +29,7 @@ public class Controlador_GUI_Cursos implements ActionListener {
          }
          
         if(evento.getActionCommand().equals("Consultar")){
-            
+            metodosCursos.consultarCurso(ventanaCursos.getJt_Sigla());
         } 
          
          
